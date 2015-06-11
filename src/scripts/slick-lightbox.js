@@ -260,6 +260,9 @@ SlickLightbox = (function() {
       return this.transitionDuration;
     }
     duration = this.modalElement.css('transition-duration');
+    if (duration === undefined) {
+      duration = '0.5s';
+    }
     return this.transitionDuration = duration.indexOf('ms') > -1 ? parseFloat(duration) : parseFloat(duration) * 1000;
   };
 
